@@ -5,10 +5,7 @@ import Home from '../components/home/home' //Import the component file
 
 const HomeScreen = ({ navigation }) => (
   <View style={styles.container}>
-    <Button
-        title='Check the categories'  
-        onPress={() => navigation.dispatch({ type: 'Categories' })}  
-    />
+  
     <Home />
   </View>
 );
@@ -18,7 +15,7 @@ HomeScreen.propTypes = {
 };
 
 HomeScreen.navigationOptions = {
-  title: 'Home',
+  title: 'Gwitter',
 };
 
 const styles = StyleSheet.create({
