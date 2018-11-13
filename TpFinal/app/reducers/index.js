@@ -5,6 +5,7 @@ import nav from './navReducer';
 const AppReducer = combineReducers({
   nav,
   dataReducer
+  ,
 });
 
 export default AppReducer;
