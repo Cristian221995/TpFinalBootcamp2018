@@ -4,7 +4,7 @@ export const DATA_AVAILABLE = 'DATA_AVAILABLE';
 import Data from '../instructions.json';
  
 export function getData(){
-    return (dispatch) => {
+    return (dispatch) => { 
  
         //Make API Call
         //For this example, I will be using the sample data in the json file
