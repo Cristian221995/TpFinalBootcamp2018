@@ -6,10 +6,6 @@ import thunk from 'redux-thunk';
 
 import AppReducer from './app/reducers';
 import { AppNavigator, middleware } from './app/components/AppNavigator';
-<<<<<<< HEAD
-
-=======
->>>>>>> gaston
 
 
 const store = createStore(AppReducer, applyMiddleware(thunk));

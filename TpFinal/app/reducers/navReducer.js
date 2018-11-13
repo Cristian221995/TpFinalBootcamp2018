@@ -1,9 +1,5 @@
 
 import { NavigationActions } from 'react-navigation';
-<<<<<<< HEAD
-//import { RootNavigator } from '../components/appNavigator';
-=======
->>>>>>> gaston
 import { RootNavigator } from '../components/AppNavigator';
 
 const firstAction = RootNavigator.router.getActionForPathAndParams('Home');

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-//import HomeScreen from '../screens/homeScreen'
-=======
->>>>>>> gaston
 import HomeScreen from '../screens/HomeScreen'
 import CategoriesScreen from '../screens/categoriesScreen'
 
