@@ -15,7 +15,7 @@ HomeScreen.propTypes = {
 };
 
 HomeScreen.navigationOptions = {
-  title: 'Gwitter',
+  title: 'Home',
 };
 
 const styles = StyleSheet.create({
