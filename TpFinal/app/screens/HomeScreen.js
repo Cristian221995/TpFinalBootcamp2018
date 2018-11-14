@@ -5,7 +5,6 @@ import Home from '../components/home/home' //Import the component file
 
 const HomeScreen = ({ navigation }) => (
   <View style={styles.container}>
-  
     <Home />
   </View>
 );

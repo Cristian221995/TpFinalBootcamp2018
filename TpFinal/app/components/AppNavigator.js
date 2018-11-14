@@ -61,9 +61,8 @@ const RootNavigator = createMaterialTopTabNavigator({
     },
     indicatorStyle: {
         backgroundColor: '#00acee'
-    }
-  }
-  
+    },    
+  }, 
 }
 );
 

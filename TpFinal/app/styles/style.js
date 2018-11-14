@@ -10,8 +10,7 @@ const styles = StyleSheet.create({
 
     flatlistView: {
         flex:1, 
-        backgroundColor: '#F5F5F5', 
-        paddingTop:20
+        backgroundColor: '#F5F5F5',
     },
 
     tweetWrapper:{
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
 
     tweetContent: {
         flexDirection: 'column',
-        width: '85%',
+        width: '80%',
     },
 
     tweetHeader: {
@@ -59,8 +58,21 @@ const styles = StyleSheet.create({
 
     tweetMedia: {
         width: '100%',
-        height: 200
-        
+        height: 150,
+        marginLeft: 10,
+        paddingRight: 10,
+        resizeMode: 'contain',
+        borderRadius: 10,   
+    },
+
+    tweetSocial: {
+        flexDirection: 'row', 
+        justifyContent: 'space-around',
+        marginTop: 10,
+    },
+
+    tweetSocialItem: {
+        flexDirection: 'row',
     }
 });
 
