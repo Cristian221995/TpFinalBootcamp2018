@@ -53,9 +53,8 @@ class Home extends Component {
 
     renderItem({item, index}) {
         return (
-            <View style={styles.tweetWrapper}>
-                <Tweet tweet={item}/>
-                
+            <View>
+                <Tweet tweet={item}/>  
             </View>
         )
     }

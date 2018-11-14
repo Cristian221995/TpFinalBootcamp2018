@@ -17,17 +17,50 @@ const styles = StyleSheet.create({
     tweetWrapper:{
         borderBottomWidth: 1,
         borderColor: "#ccc",
-        padding: 10
+        padding: 10,
+        flexDirection: 'row'
     },
 
-    tweetTitle:{
+    tweetContent: {
+        flexDirection: 'column',
+        width: '85%',
+    },
+
+    tweetHeader: {
+        flexDirection: 'row', 
+        alignItems: 'center', 
+    },
+
+    tweetUsername:{
         fontSize: 15,
-        fontWeight: "600"
+        fontWeight: "600",
+        paddingLeft: 10
     },
 
-    tweetDescription:{
+    tweetUserAccount: {
+        fontSize: 15,
+        fontWeight: "600",
+        color: '#CCC',
+        paddingLeft: 10
+    },
+
+    tweetDescription: {
         marginTop: 5,
+        marginLeft: 10,
+        paddingRight: 10,
         fontSize: 14,
+    },
+
+    tweetUserAvatar: {
+        width: 50,
+        height: 50,
+        borderRadius: 50,
+    },
+
+    tweetMedia: {
+        width: '100%',
+        height: 200
+        
     }
 });
 
