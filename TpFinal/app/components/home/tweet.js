@@ -20,7 +20,7 @@ export default class Tweet extends Component {
 
     render() {
         if(this.props.tweet.entities.media) {
-            console.log("if");
+            
             return (
             <View style={styles.tweetWrapper}>
                 <Image 
@@ -41,7 +41,7 @@ export default class Tweet extends Component {
             </View>
             );
         } else {
-            console.log("else");
+            
             return (
             <View style={styles.tweetWrapper}>
                 <Image 
