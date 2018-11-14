@@ -12,8 +12,8 @@ import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navig
 import { Ionicons } from '@expo/vector-icons';
 
 import Form2 from './header/Form2';
-import Form3 from './header/Form3';
 import HomeScreen from '../screens/HomeScreen';
+import ConfigScreen from '../screens/ConfigScreen';
 
 
 
@@ -26,7 +26,7 @@ const middleware = createReactNavigationReduxMiddleware(
 const RootNavigator = createMaterialTopTabNavigator({ 
   Home: HomeScreen,
   Search: Form2,
-  Config: Form3
+  Config: ConfigScreen,
 },
 
 {
