@@ -1,4 +1,4 @@
-import { GET_TIMELINE } from "../actions/timelineActions.js";
+import { GET_TIMELINE } from "../actions/index";
 
 let timelineState = {
     data: [],

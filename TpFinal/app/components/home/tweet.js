@@ -13,7 +13,7 @@ export default class Tweet extends Component {
 
         this.state = {
         };      
-    }
+    };
 
 
 

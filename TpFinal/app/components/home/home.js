@@ -13,8 +13,7 @@ import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 import Tweet from './tweet';
 import * as actions from '../../actions/'; //Import your actions
-import getTimeline from '../../actions/timelineActions';
-// import { getTimeline } from '../../actions/timelineActions';
+
 
 class Home extends Component {
     constructor(props) {
@@ -24,7 +23,7 @@ class Home extends Component {
         };
 
         this.renderItem = this.renderItem.bind(this);
-    }
+}
 
     
     componentDidMount() {
