@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppRegistry } from 'react-native';
+import { AppRegistry, Text, View} from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
@@ -13,10 +13,8 @@ const store = createStore(AppReducer, applyMiddleware(thunk));
 class App extends React.Component {
   render() {
     return (
-      <Provider store={store}>
-      
-        <AppNavigator />
-         
+      <Provider store={store}>    
+          <AppNavigator />       
       </Provider>
     );
   }

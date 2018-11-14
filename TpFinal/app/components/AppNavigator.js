@@ -31,6 +31,7 @@ const RootNavigator = createMaterialTopTabNavigator({
 
 {
   navigationOptions: ({ navigation }) => ({
+    
     tabBarIcon: ({ tintColor }) => {
       const { routeName } = navigation.state;
       let iconName;
@@ -45,6 +46,8 @@ const RootNavigator = createMaterialTopTabNavigator({
 
       return <Ionicons name={iconName} size={25} color={tintColor} />;
     },
+   
+      
   }),
   tabBarOptions: {
     activeTintColor: 'grey',  //button colors

@@ -1,5 +1,5 @@
 'use strict';
-
+import styles from '../../styles/style';
 import React, { Component } from 'react';
 import {
     View,
@@ -20,8 +20,8 @@ export default class Tweet extends Component {
     render() {
         return (
             <View style={{flex:1, backgroundColor: '#F5F5F5', paddingTop:20}}>
-                <Text>{this.props.tweet.user.name}</Text>
-                <Text>{this.props.tweet.text}</Text>
+                <Text style={styles.tweetTitle}>{this.props.tweet.user.name}</Text>
+                <Text style={styles.tweetDescription}>{this.props.tweet.text}</Text>
             </View>
         );
     }

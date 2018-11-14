@@ -2,13 +2,12 @@
 
 import React, { Component } from 'react';
 import {
-    StyleSheet,
     FlatList,
     View,
     Text,
     ActivityIndicator
 } from 'react-native';
-
+import styles from '../../styles/style';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 import Tweet from './tweet';
@@ -39,14 +38,12 @@ class Home extends Component {
                 </View>
             );
         } else {
-            console.log(this.props.data);
             return (
-                <View style={{flex:1, backgroundColor: '#F5F5F5', paddingTop:20}}>
+                <View style={styles.flatlistView}>
                     <FlatList
                         ref='listRef'
                         data={this.props.data}
                         renderItem={this.renderItem}
-                        // renderItem={({item}) => <Text>{item.user}</Text>}
                         keyExtractor={(item, index) => index.toString()}
                     />
                 </View>
@@ -55,9 +52,8 @@ class Home extends Component {
     }
 
     renderItem({item, index}) {
-        console.log("hola" + item);
         return (
-            <View style={styles.row}>
+            <View style={styles.tweetWrapper}>
                 <Tweet tweet={item}/>
                 
             </View>
@@ -71,7 +67,6 @@ class Home extends Component {
 // and insert/links it into the props of our component.
 // This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
-    console.log(state.TimelineReducer);
     return {
         loading: state.TimelineReducer.loading,
         data: state.TimelineReducer.data,
@@ -90,27 +85,3 @@ function mapDispatchToProps(dispatch) {
 //Connect everything
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
-const styles = StyleSheet.create({
-    activityIndicatorContainer:{
-        backgroundColor: "#fff",
-        alignItems: 'center',
-        justifyContent: 'center',
-        flex: 1,
-    },
-
-    row:{
-        borderBottomWidth: 1,
-        borderColor: "#ccc",
-        padding: 10
-    },
-
-    title:{
-        fontSize: 15,
-        fontWeight: "600"
-    },
-
-    description:{
-        marginTop: 5,
-        fontSize: 14,
-    }
-});
