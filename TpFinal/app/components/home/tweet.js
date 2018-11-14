@@ -20,7 +20,8 @@ export default class Tweet extends Component {
     render() {
         return (
             <View style={{flex:1, backgroundColor: '#F5F5F5', paddingTop:20}}>
-                <Text>{props.tweet.user.name}</Text>
+                <Text>{this.props.tweet.user.name}</Text>
+                <Text>{this.props.tweet.text}</Text>
             </View>
         );
     }

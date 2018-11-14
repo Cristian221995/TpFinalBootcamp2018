@@ -9,7 +9,7 @@ const TimelineReducer = (state = timelineState, action) => { //state = previous 
 
     switch(action.type) {
         case GET_TIMELINE:
-            state = Object.assign({}, ...state, { data: action.payload, loading: false});
+            state = Object.assign({}, ...state, { data: action.data, loading: false});
             return state;
         default:
             return state;

@@ -23,13 +23,11 @@ class Home extends Component {
         };
 
         this.renderItem = this.renderItem.bind(this);
-}
+    }
 
     
     componentDidMount() {
-        // this.props.getData(); //call our action
         this.props.getTimeline();
-        
         
     }
 
@@ -41,19 +39,23 @@ class Home extends Component {
                 </View>
             );
         } else {
+            console.log(this.props.data);
             return (
                 <View style={{flex:1, backgroundColor: '#F5F5F5', paddingTop:20}}>
                     <FlatList
                         ref='listRef'
                         data={this.props.data}
                         renderItem={this.renderItem}
-                        keyExtractor={(item, index) => index.toString()}/>
+                        // renderItem={({item}) => <Text>{item.user}</Text>}
+                        keyExtractor={(item, index) => index.toString()}
+                    />
                 </View>
             );
         }
     }
 
     renderItem({item, index}) {
+        console.log("hola" + item);
         return (
             <View style={styles.row}>
                 <Tweet tweet={item}/>
@@ -69,10 +71,12 @@ class Home extends Component {
 // and insert/links it into the props of our component.
 // This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
+    console.log(state.TimelineReducer);
     return {
         loading: state.TimelineReducer.loading,
-        data: state.TimelineReducer.payload
+        data: state.TimelineReducer.data,
     }
+
 }
 
 // Doing this merges our actions into the component’s props,
