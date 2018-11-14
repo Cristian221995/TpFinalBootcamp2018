@@ -1,6 +1,6 @@
 
 export const GET_TIMELINE = 'GET_TIMELINE';
-const host = 'http://192.168.0.235:8080';   // 192.168.0.212 gaston  // 192.168.0.235 santigit
+const host = 'http://192.168.0.212:8080';   // 192.168.0.gaston  // 192.168.0.235 santi
 export function getTimeline(){
     return (dispatch) => {
         const url = `${host}/timeline?count=5`; //we require 20 tweets
