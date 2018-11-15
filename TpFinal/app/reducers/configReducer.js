@@ -15,7 +15,7 @@ let configState = {
     
 };
 
-const TimelineReducer = (state = configState, action) => { //state = previous state
+const ConfigReducer = (state = configState, action) => { //state = previous state
 
     switch(action.type) {
         case CONFIG_NOT_VERIFIED:
@@ -39,4 +39,4 @@ const TimelineReducer = (state = configState, action) => { //state = previous st
     }
 };
 
-export default TimelineReducer;
+export default ConfigReducer;

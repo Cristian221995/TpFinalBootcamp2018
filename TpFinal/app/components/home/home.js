@@ -2,15 +2,12 @@
 
 import React, { Component } from 'react';
 import {
-    FlatList,
     View,
-    Text,
     ActivityIndicator
 } from 'react-native';
 import styles from '../../styles/style';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-import Tweet from './tweet';
 import * as actions from '../../actions/'; //Import your actions
 import TimeLine from '../timeline';
 
@@ -37,7 +34,11 @@ class Home extends Component {
         } else {
             
             return (
-                <TimeLine data={this.props.data}/>
+                <TimeLine 
+                    data={this.props.data}
+                    loading={this.props.loading}
+                    loadContent={this.props.getMoreTweets}
+                />
             );
         }
     }
@@ -52,7 +53,6 @@ function mapStateToProps(state, props) {
     return {
         loading: state.TimelineReducer.loading,
         data: state.TimelineReducer.data,
-        //notVerified: state.ConfigReducer.data,
     }
 
 }

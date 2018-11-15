@@ -1,21 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   reduxifyNavigator,
   createReactNavigationReduxMiddleware,
 } from 'react-navigation-redux-helpers';
 
-
-
 import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 
-import Form2 from './header/Form2';
 import HomeScreen from '../screens/HomeScreen';
 import ConfigScreen from '../screens/ConfigScreen';
 import SearchScreen from '../screens/SearchScreen';
-
 
 
 const middleware = createReactNavigationReduxMiddleware(
@@ -23,14 +18,11 @@ const middleware = createReactNavigationReduxMiddleware(
   state => state.nav
 );
 
-
 const RootNavigator = createMaterialTopTabNavigator({ 
   Home: HomeScreen,
-  Search: Form2,
   Search: SearchScreen,
   Config: ConfigScreen,
 },
-
 {
   navigationOptions: ({ navigation }) => ({
     
@@ -47,9 +39,7 @@ const RootNavigator = createMaterialTopTabNavigator({
       }
 
       return <Ionicons name={iconName} size={25} color={tintColor} />;
-    },
-   
-      
+    },    
   }),
   tabBarOptions: {
     activeTintColor: 'grey',  //button colors
@@ -67,8 +57,6 @@ const RootNavigator = createMaterialTopTabNavigator({
   }, 
 }
 );
-
-
 
 const AppWithNavigationState = reduxifyNavigator(RootNavigator, 'root');
 

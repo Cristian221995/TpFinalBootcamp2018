@@ -17,8 +17,6 @@ export default class Tweet extends Component {
         };      
     };
 
-
-
     render() {
         if(this.props.tweet.entities.media) {
             
