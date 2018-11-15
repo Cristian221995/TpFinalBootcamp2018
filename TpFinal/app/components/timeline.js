@@ -32,6 +32,7 @@ export default class TimeLine extends Component {
                 onEndReachedThreshold={0.5}
                 onEndReached={this.props.loadContent}
                 extraData={this.props.config}
+
             />
         </View>
      );

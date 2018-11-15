@@ -28,18 +28,22 @@ class Config extends Component {
 
     handleNotFollow() {
         this.props.configNotFollow();
+        this.props.getTimeline(this.props.config);
     }
 
     handledefaultProfile() {
         this.props.configHaveDefaultProfile();
+        this.props.getTimeline(this.props.config);
     }
 
     handleContainsLink() {
         this.props.configContainsLink();
+        this.props.getTimeline(this.props.config);
     }
 
     handleTextTruncated() {
         this.props.configTextTruncated();
+        this.props.getTimeline(this.props.config);
     }
 
     render() {

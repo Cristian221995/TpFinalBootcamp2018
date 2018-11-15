@@ -56,7 +56,7 @@ function mapStateToProps(state, props) {
         loading: state.TimelineReducer.loading,
         data: state.TimelineReducer.data,
         config: {
-            notVerifed:state.ConfigReducer.notVerified,
+            notVerified:state.ConfigReducer.notVerified,
             notFollow:state.ConfigReducer.notFollow,
             defaultProfile:state.ConfigReducer.defaultProfile,
             containsLinks:state.ConfigReducer.containsLinks,
