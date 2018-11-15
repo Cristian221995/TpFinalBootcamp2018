@@ -37,7 +37,7 @@ class Home extends Component {
                 <TimeLine 
                     data={this.props.data}
                     loading={this.props.loading}
-                    loadContent={this.props.getMoreTweets}
+                    // loadContent={this.props.getMoreTweets}
                 />
             );
         }
