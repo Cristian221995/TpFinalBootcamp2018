@@ -52,6 +52,7 @@ function mapStateToProps(state, props) {
     return {
         loading: state.TimelineReducer.loading,
         data: state.TimelineReducer.data,
+        //notVerified: state.ConfigReducer.data,
     }
 
 }
