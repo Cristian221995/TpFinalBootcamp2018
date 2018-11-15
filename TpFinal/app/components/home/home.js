@@ -20,7 +20,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        this.props.getTimeline();
+        this.props.getTimeline(this.props.config);
         
     }
 
@@ -37,6 +37,8 @@ class Home extends Component {
                 <TimeLine 
                     data={this.props.data}
                     loading={this.props.loading}
+                    reload= {this.props.getTimeline}
+                    config={this.props.config}
                     // loadContent={this.props.getMoreTweets}
                 />
             );
@@ -53,6 +55,13 @@ function mapStateToProps(state, props) {
     return {
         loading: state.TimelineReducer.loading,
         data: state.TimelineReducer.data,
+        config: {
+            notVerifed:state.ConfigReducer.notVerified,
+            notFollow:state.ConfigReducer.notFollow,
+            defaultProfile:state.ConfigReducer.defaultProfile,
+            containsLinks:state.ConfigReducer.containsLinks,
+            textTruncated:state.ConfigReducer.textTruncated,
+        }
     }
 
 }

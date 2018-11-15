@@ -11,17 +11,18 @@ export const CONFIG_TEXT_TRUNCATED = 'CONFIG_TEXT_TRUNCATED';
 //Trends Actions:
 export const GET_TRENDS = "GET_TRENDS"
 
-const host = 'http://192.168.0.235:8080';   // 192.168.0.212 gaston  // 192.168.0.235 santi // 192.168.0.62 cris
+const host = 'http://192.168.0.212:8080';   // 192.168.0.212 gaston  // 192.168.0.235 santi // 192.168.0.62 cris
 
 
-export function getTimeline(){
+export function getTimeline(config){
     return (dispatch) => {
         const url = `${host}/timeline?count=10`; //we require 50 tweets
 
         fetch(url)
         .then((response) => response.json())
         .then((responseJson) => {
-            var tweets = responseJson;
+            var tweets = applyFilters(responseJson, config);
+            
             dispatch({ type: GET_TIMELINE, data: tweets}); //dispatch an object (action) whith the type and a Json with the timeline
         })
         .catch((error) => {
@@ -29,6 +30,25 @@ export function getTimeline(){
         });
     };
 };
+
+function applyFilters(json, config){
+    if(config.notVerified ){
+        json= json.filter( tweet => tweet.user.verified);
+    }
+    if(config.notFollow){
+        json= json.filter( tweet => tweet.user.following);
+    }
+    if(config.defaultProfile){
+        json= json.filter( tweet => !tweet.user.default_profile);
+    }
+    if(config.containsLinks){
+        json= json.filter( tweet => !tweet.entities.urls[0]);
+    }
+    if(config.textTruncated){
+        json= json.filter( tweet => !tweet.truncated);
+    }
+    return json;
+}
 
 
 export function getMoreTweets(){

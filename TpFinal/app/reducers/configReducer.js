@@ -28,7 +28,7 @@ const ConfigReducer = (state = configState, action) => { //state = previous stat
             state = Object.assign({}, state, { defaultProfile: !state.defaultProfile});
             return state;
         case CONFIG_CONTAINS_LINK:
-            state = Object.assign({}, state, { containsLink: !state.containsLinks});
+            state = Object.assign({}, state, { containsLinks: !state.containsLinks});
             return state; 
         case CONFIG_TEXT_TRUNCATED:
             state = Object.assign({}, state, { textTruncated: !state.textTruncated});

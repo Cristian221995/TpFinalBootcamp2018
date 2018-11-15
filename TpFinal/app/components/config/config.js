@@ -23,6 +23,7 @@ class Config extends Component {
 
     handleNotVerified() {
         this.props.configNotVerified();
+        this.props.getTimeline(this.props.config);
     }
 
     handleNotFollow() {
@@ -49,23 +50,23 @@ class Config extends Component {
                 </View>
                 <View style={styles.configItem}>
                 <Text style={styles.configText}>People who have not verified the account</Text>
-                <CheckBox style={styles.configCheckBox} value={this.props.notVerified} onValueChange={this.handleNotVerified}/>
+                <CheckBox style={styles.configCheckBox} value={this.props.config.notVerified} onValueChange={this.handleNotVerified}/>
                 </View>
                 <View style={styles.configItem}>
                 <Text style={styles.configText}>People who do not follow</Text>
-                <CheckBox style={styles.configCheckBox} value={this.props.notFollow} onValueChange={this.handleNotFollow}/>
+                <CheckBox style={styles.configCheckBox} value={this.props.config.notFollow} onValueChange={this.handleNotFollow}/>
                 </View>        
                 <View style={styles.configItem}>
                 <Text style={styles.configText}>People who have default profile information</Text>
-                <CheckBox style={styles.configCheckBox} value={this.props.defaultProfile} onValueChange={this.handledefaultProfile}/>
+                <CheckBox style={styles.configCheckBox} value={this.props.config.defaultProfile} onValueChange={this.handledefaultProfile}/>
                 </View>
                 <View style={styles.configItem}>
                 <Text style={styles.configText}>Tweets that contains a link</Text>
-                <CheckBox style={styles.configCheckBox} value={this.props.containsLinks} onValueChange={this.handleContainsLink}/>
+                <CheckBox style={styles.configCheckBox} value={this.props.config.containsLinks} onValueChange={this.handleContainsLink}/>
                 </View>
                 <View style={styles.configItem}>
                 <Text style={styles.configText}>Tweets that has text truncated</Text>
-                <CheckBox style={styles.configCheckBox} value={this.props.textTruncated} onValueChange={this.handleTextTruncated}/>
+                <CheckBox style={styles.configCheckBox} value={this.props.config.textTruncated} onValueChange={this.handleTextTruncated}/>
                 </View>           
             </View>
           
@@ -79,11 +80,13 @@ class Config extends Component {
 // This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
     return {
-        notVerified: state.ConfigReducer.notVerified,
-        notFollow: state.ConfigReducer.notFollow,
-        defaultProfile: state.ConfigReducer.defaultProfile,
-        containsLinks: state.ConfigReducer.containsLinks,
-        textTruncated: state.ConfigReducer.textTruncated,
+        config:{
+            notVerified: state.ConfigReducer.notVerified,
+            notFollow: state.ConfigReducer.notFollow,
+            defaultProfile: state.ConfigReducer.defaultProfile,
+            containsLinks: state.ConfigReducer.containsLinks,
+            textTruncated: state.ConfigReducer.textTruncated,
+        }
     }
 
 }
