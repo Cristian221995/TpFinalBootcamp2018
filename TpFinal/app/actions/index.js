@@ -11,7 +11,7 @@ export const CONFIG_TEXT_TRUNCATED = 'CONFIG_TEXT_TRUNCATED';
 //Trends Actions:
 export const GET_TRENDS = "GET_TRENDS"
 
-const host = 'http://192.168.0.235:8080';   // 192.168.0.212 gaston  // 192.168.0.235 santi // 192.168.0.62 cris
+const host = 'http://192.168.0.62:8080';   // 192.168.0.212 gaston  // 192.168.0.235 santi // 192.168.0.62 cris
 
 
 export function getTimeline(config){
