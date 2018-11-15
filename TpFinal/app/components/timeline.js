@@ -4,11 +4,10 @@ import React, { Component } from 'react';
 import Tweet from './home/tweet'
 import {
     View,
-    Text,
-    Image,
     FlatList,
-    
+    ActivityIndicator
 } from 'react-native';
+
 
 export default class TimeLine extends Component {
     constructor(props) {
@@ -18,10 +17,8 @@ export default class TimeLine extends Component {
         }; 
         
         this.renderItem = this.renderItem.bind(this);
-        
+        this.renderFooter = this.renderFooter.bind(this);
     };
-
-    
 
     render() {
         
@@ -32,10 +29,28 @@ export default class TimeLine extends Component {
                 data={this.props.data}
                 renderItem={this.renderItem}
                 keyExtractor={(item, index) => index.toString()}
+                ListFooterComponent={this.renderFooter}
+                onEndReachedThreshold={0.5}
+                onEndReached={this.props.loadContent}
             />
         </View>
      );
-    }
+    };
+
+    renderFooter = () => {
+        if (!this.state.loading) return null;
+        return (
+          <View
+            style={{
+              paddingVertical: 20,
+              borderTopWidth: 1,
+              borderColor: "#CED0CE"
+            }}
+          >
+              <ActivityIndicator animating size="large" />
+          </View>
+        );
+      };
     
     renderItem({item, index}) {
         return (
@@ -43,5 +58,5 @@ export default class TimeLine extends Component {
         )
     }
         
-    
-}
+};
+

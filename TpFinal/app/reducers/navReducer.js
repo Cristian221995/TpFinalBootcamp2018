@@ -28,7 +28,6 @@ const NavReducer = (state = initialNavState, action) => {
       nextState = RootNavigator.router.getStateForAction(action, state);
       break;
   }
-
   // Simply return the original `state` if `nextState` is null or undefined.
   return nextState || state;
 }
