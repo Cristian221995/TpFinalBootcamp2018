@@ -73,6 +73,39 @@ const styles = StyleSheet.create({
 
     tweetSocialItem: {
         flexDirection: 'row',
+    },
+
+    trendWrapper:{
+        flexDirection: 'row',
+        borderBottomWidth: 1,
+        borderColor: "#ccc",
+        padding: 10,
+    },
+    trendNumber:{
+        
+        color: '#CCC',
+        fontSize: 16,
+        fontWeight: "600",
+        paddingLeft: 10
+    },
+    trendData:{
+        flexDirection: 'column',
+        marginLeft: '8%',
+        paddingRight: 10,   
+    },
+    trendName:{
+        fontSize: 17,
+    },
+    countTw:{
+        color: '#CCC',
+        fontSize: 16,
+        fontWeight: "300",
+        marginTop:'3%'
+    },
+    trendTitle:{
+        fontSize: 18,
+        fontWeight: "600"
+
     }
 });
 

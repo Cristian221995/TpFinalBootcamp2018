@@ -8,23 +8,37 @@ export default class Trend extends Component {
         super(props);
 
         this.state = {
-        };      
+        };    
+        this.getTw=this.getTw.bind(this);  
     };
 
-
+    getTw(x)
+    {   let rt ;
+        if(!x){
+            rt=0;  
+        }
+        else{
+            rt=x;
+        }
+        return rt;
+    }
 
     render() { 
         let trends = [];
-        
+         
         for (let i = 0; i < this.props.data.trends.length; i++) {
-            trends[i] = <View key={i}>
-                            <Text>{this.props.data.trends[i].name}</Text>
-                            <Text>{this.props.data.trends[i].tweet_volume}</Text>
-                        </View>;
+        
+        trends[i] = <View key={i} style={styles.trendWrapper}>
+                        <Text style={styles.trendNumber}>{i}</Text>
+                        <View style={styles.trendData}>
+                            <Text style={styles.trendName}>{this.props.data.trends[i].name}</Text>
+                            <Text style={styles.countTw}> {this.getTw(this.props.data.trends[i].tweet_volume)+" tweets"}</Text>
+                        </View>
+                    </View>
         }
         return (
-            <View >
-                <Text>tendencias</Text>
+            <View>
+                <Text style={styles.trendTitle}>Trends for you</Text>
                 {trends}
             </View>        
         );
