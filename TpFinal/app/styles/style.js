@@ -104,8 +104,8 @@ const styles = StyleSheet.create({
     },
     trendTitle:{
         fontSize: 18,
-        fontWeight: "600"
-
+        fontWeight: "600",
+        margin: '3%'
     }
 });
 
