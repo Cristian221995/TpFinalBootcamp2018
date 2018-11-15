@@ -16,7 +16,7 @@ const host = 'http://192.168.0.235:8080';   // 192.168.0.212 gaston  // 192.168.
 
 export function getTimeline(config){
     return (dispatch) => {
-        const url = `${host}/timeline?count=50`; //we require 50 tweets
+        const url = `${host}/timeline?count=15`; //we require 50 tweets
 
         fetch(url)
         .then((response) => response.json())

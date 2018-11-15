@@ -23,7 +23,7 @@ class Config extends Component {
 
     handleNotVerified() {
         this.props.configNotVerified();
-        this.props.getTimeline(this.props.config);
+        this.props.getTimeline(this.props.config); 
     }
 
     handleNotFollow() {
