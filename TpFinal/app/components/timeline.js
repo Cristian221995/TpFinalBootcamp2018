@@ -6,7 +6,8 @@ import {
     View,
     Text,
     Image,
-    FlatList
+    FlatList,
+    TouchableOpacity
 } from 'react-native';
 
 export default class TimeLine extends Component {
