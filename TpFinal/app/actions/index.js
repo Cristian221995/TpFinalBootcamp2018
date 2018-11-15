@@ -51,14 +51,14 @@ function applyFilters(json, config){
 }
 
 
-export function getMoreTweets(){
+export function getMoreTweets(config){
   return (dispatch) => {
       const url = `${host}/timeline?count=50`; //we require 50 tweets
 
       fetch(url)
       .then((response) => response.json())
       .then((responseJson) => {
-          var tweets = responseJson;
+        var tweets = applyFilters(responseJson, config);
           dispatch({ type: GET_MORE_TWEETS, data: tweets}); //dispatch an object (action) whith the type and a Json with the timeline
       })
       .catch((error) => {

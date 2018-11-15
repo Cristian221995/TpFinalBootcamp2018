@@ -23,27 +23,27 @@ class Config extends Component {
 
     handleNotVerified() {
         this.props.configNotVerified();
-        this.props.getTimeline(this.props.config); 
+        //this.props.getTimeline(this.props.config);   // Previus implementation
     }
 
     handleNotFollow() {
         this.props.configNotFollow();
-        this.props.getTimeline(this.props.config);
+        //this.props.getTimeline(this.props.config);
     }
 
     handledefaultProfile() {
         this.props.configHaveDefaultProfile();
-        this.props.getTimeline(this.props.config);
+        //this.props.getTimeline(this.props.config);
     }
 
     handleContainsLink() {
         this.props.configContainsLink();
-        this.props.getTimeline(this.props.config);
+        //this.props.getTimeline(this.props.config);
     }
 
     handleTextTruncated() {
         this.props.configTextTruncated();
-        this.props.getTimeline(this.props.config);
+        //this.props.getTimeline(this.props.config);
     }
 
     render() {

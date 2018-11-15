@@ -7,16 +7,20 @@ import {
     FlatList,
     ActivityIndicator
 } from 'react-native';
+import { getTimeline } from '../actions';
 
 export default class TimeLine extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            refreshing: false,
         }; 
         
         this.renderItem = this.renderItem.bind(this);
         this.renderFooter = this.renderFooter.bind(this);
+        this.handleRefresh = this.handleRefresh.bind(this);
+        this.handleOnEndReached = this.handleOnEndReached.bind(this);
     };
 
     render() {
@@ -30,13 +34,27 @@ export default class TimeLine extends Component {
                 keyExtractor={(item, index) => index.toString()}
                 ListFooterComponent={this.renderFooter}
                 onEndReachedThreshold={0.5}
-                onEndReached={this.props.loadContent}
+                onEndReached={this.handleOnEndReached}
                 extraData={this.props.config}
+                refreshing={this.state.refreshing}
+                onRefresh={this.handleRefresh}
 
             />
         </View>
      );
     };
+
+    handleOnEndReached() {
+        this.props.loadContent(this.props.config);
+    }
+
+    handleRefresh(){
+        this.setState({refreshing: true});
+        console.log("refresh");
+        this.props.reload(this.props.config);
+        this.setState({refreshing: false});
+
+    }
 
     renderFooter = () => {
         if (!this.state.loading) return null;

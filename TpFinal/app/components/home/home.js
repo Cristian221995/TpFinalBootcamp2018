@@ -39,7 +39,7 @@ class Home extends Component {
                     loading={this.props.loading}
                     reload= {this.props.getTimeline}
                     config={this.props.config}
-                    // loadContent={this.props.getMoreTweets}
+                    loadContent={this.props.getMoreTweets}
                 />
             );
         }
