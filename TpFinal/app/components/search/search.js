@@ -10,24 +10,25 @@ import {
 import styles from '../../styles/style';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-import Tweet from './tweet';
-import * as actions from '../../actions/'; //Import your actions
-import TimeLine from '../timeline';
 
-class Home extends Component {
+import * as actions from '../../actions/'; //Import your actions
+import Trends from './trends';
+
+class Search extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
         };
     }
-
+   
     componentDidMount() {
-        this.props.getTimeline();
+        this.props.getTrends();
         
     }
 
     render() {
+        
         if (this.props.loading) {
             return (
                 <View style={styles.activityIndicatorContainer}>
@@ -35,12 +36,13 @@ class Home extends Component {
                 </View>
             );
         } else {
-            
+        
             return (
-                <TimeLine data={this.props.data}/>
+                <Trends data={this.props.data}/>
             );
         }
     }
+
 };
 
 
@@ -50,9 +52,8 @@ class Home extends Component {
 // This function makes Redux know that this component needs to be passed a piece of the state
 function mapStateToProps(state, props) {
     return {
-        loading: state.TimelineReducer.loading,
-        data: state.TimelineReducer.data,
-        //notVerified: state.ConfigReducer.data,
+        loading: state.SearchReducer.loading,
+        data: state.SearchReducer.data,
     }
 
 }
@@ -66,5 +67,5 @@ function mapDispatchToProps(dispatch) {
 }
 
 //Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
 

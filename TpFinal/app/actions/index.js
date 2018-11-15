@@ -9,10 +9,11 @@ export const CONFIG_CONTAINS_LINK = 'CONFIG_CONTAINS_LINK';
 export const CONFIG_TEXT_TRUNCATED = 'CONFIG_TEXT_TRUNCATED';
 
 const host = 'http://192.168.1.44:8080';   // 192.168.0.gaston  // 192.168.0.235 santi // 192.168.0.62 cris
+export const GET_TRENDS = "GET_TRENDS"
 
 export function getTimeline(){
     return (dispatch) => {
-        const url = `${host}/timeline?count=5`; //we require 20 tweets
+        const url = `${host}/timeline?count=100`; //we require 20 tweets
 
         fetch(url)
         .then((response) => response.json())
@@ -56,3 +57,19 @@ export function configNotVerified(){
       dispatch({type: CONFIG_TEXT_TRUNCATED});
     }
   }
+export function getTrends(){
+    return (dispatch) => {
+        const url = `${host}/trends?id=23424747`; 
+
+        fetch(url)
+        .then((response) => response.json())
+        .then((responseJson) => {
+            var trends = responseJson;
+            // console.log(tweets);
+            dispatch({ type: GET_TRENDS, data: trends}); //dispatch an object (action) whith the type and a Json with the timeline
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    };
+};

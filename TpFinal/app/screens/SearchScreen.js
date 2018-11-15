@@ -1,20 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import PropTypes from 'prop-types';
-import Home from '../components/home/home' //Import the component file
+import Search from '../components/search/search' //Import the component file
 
-const HomeScreen = ({ navigation }) => (
-  <View style={styles.container}>
-    <Home />
+const SearchScreen = ({ navigation }) => (
+  
+  <View  style={styles.container}>
+    <Search />
   </View>
 );
 
-HomeScreen.propTypes = {
+SearchScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
 };
 
-HomeScreen.navigationOptions = {
-  title: 'Home',
+SearchScreen.navigationOptions = {
+  title: 'Search',
 };
 
 const styles = StyleSheet.create({
@@ -24,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default SearchScreen;
