@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import PropTypes from 'prop-types';
 import {StackNavigator} from 'react-navigation';
 
+
 const CategoriesScreen = ({ navigation }) => (
   <View style={styles.container}>
       <Button

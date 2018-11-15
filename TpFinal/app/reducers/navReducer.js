@@ -1,6 +1,7 @@
 
 import { NavigationActions } from 'react-navigation';
 import { RootNavigator } from '../components/AppNavigator';
+import { NAV_TWEET_SCREEN } from "../actions/"
 
 const firstAction = RootNavigator.router.getActionForPathAndParams('Home');
 const tempNavState = RootNavigator.router.getStateForAction(firstAction);
@@ -14,13 +15,25 @@ const NavReducer = (state = initialNavState, action) => {
   switch (action.type) {
     case 'Home':
       nextState = RootNavigator.router.getStateForAction(
-        NavigationActions.navigate({ routeName: 'Home' }),
+        NavigationActions.navigate({ routeName: 'home' }),
         state
       );
       break;
-    case 'Categories':
+    case 'NAV_TWEET_SCREEN':
       nextState = RootNavigator.router.getStateForAction(
-        NavigationActions.navigate({ routeName: 'Categories' }),
+        NavigationActions.navigate({ routeName: 'tweet' }),
+        state
+      );
+      break;
+    case 'Search':
+      nextState = RootNavigator.router.getStateForAction(
+        NavigationActions.navigate({ routeName: 'Search' }),
+        state
+      );
+      break;
+    case 'Config':
+      nextState = RootNavigator.router.getStateForAction(
+        NavigationActions.navigate({ routeName: 'Config' }),
         state
       );
       break;

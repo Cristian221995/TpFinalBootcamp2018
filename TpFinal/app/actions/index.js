@@ -1,3 +1,5 @@
+import { Text, View} from 'react-native';
+import React, { Component } from 'react';
 
 //Timeline Actions!
 export const GET_TIMELINE = 'GET_TIMELINE';
@@ -9,7 +11,8 @@ export const CONFIG_HAVE_DEFAULT_PROFILE = 'CONFIG_HAVE_DEFAULT_PROFILE';
 export const CONFIG_CONTAINS_LINK = 'CONFIG_CONTAINS_LINK';
 export const CONFIG_TEXT_TRUNCATED = 'CONFIG_TEXT_TRUNCATED';
 //Trends and Search Actions!
-export const GET_TRENDS = "GET_TRENDS"
+export const GET_TRENDS = "GET_TRENDS";
+export const NAV_TWEET_SCREEN = 'NAV_TWEET_SCREEN';
 
 const host = 'http://192.168.0.235:8080';   // 192.168.0.gaston  // 192.168.0.235 santi // 192.168.0.62 cris
 
@@ -91,3 +94,13 @@ export function getTrends(){
         });
     };
 };
+
+export function navigationTweetScreen(){
+    // return (dispatch) => {
+      // dispatch({type: NAV_TWEET_SCREEN});
+      return (
+        <View>
+          <Text>Hola</Text>
+        </View>
+      );
+  }

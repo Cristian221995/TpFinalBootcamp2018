@@ -11,6 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from '../screens/HomeScreen';
 import ConfigScreen from '../screens/ConfigScreen';
 import SearchScreen from '../screens/SearchScreen';
+import TweetScreen from '../screens/TweetScreen';
 
 
 const middleware = createReactNavigationReduxMiddleware(
@@ -19,7 +20,10 @@ const middleware = createReactNavigationReduxMiddleware(
 );
 
 const RootNavigator = createMaterialTopTabNavigator({ 
-  Home: HomeScreen,
+  Home: createStackNavigator({
+    home: HomeScreen,
+    tweet: TweetScreen,
+  }),
   Search: SearchScreen,
   Config: ConfigScreen,
 },
