@@ -5,9 +5,9 @@ import {
     View,
     Text,
     Image,
-    
 } from 'react-native';
 import { FontAwesome, Feather } from '@expo/vector-icons';
+
 
 export default class Tweet extends Component {
     constructor(props) {
@@ -16,9 +16,7 @@ export default class Tweet extends Component {
         this.state = {
         };      
     };
-
-
-
+    
     render() {
         if(this.props.tweet.entities.media) {
             

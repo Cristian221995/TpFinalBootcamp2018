@@ -6,7 +6,8 @@ import {
     View,
     Text,
     Image,
-    FlatList
+    FlatList,
+    
 } from 'react-native';
 
 export default class TimeLine extends Component {
@@ -17,11 +18,13 @@ export default class TimeLine extends Component {
         }; 
         
         this.renderItem = this.renderItem.bind(this);
+        
     };
 
     
 
     render() {
+        
      return (
         <View style={styles.flatlistView}>
             <FlatList
@@ -36,10 +39,9 @@ export default class TimeLine extends Component {
     
     renderItem({item, index}) {
         return (
-            <View>
-                <Tweet tweet={item}/>  
-            </View>
+            <Tweet tweet={item}/>     
         )
     }
         
+    
 }

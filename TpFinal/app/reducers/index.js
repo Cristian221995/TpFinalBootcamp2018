@@ -4,11 +4,10 @@ import nav from './navReducer';
 import TimelineReducer from '../reducers/timelineReducer'
 import SearchReducer from '../reducers/searchReducer'
 
-
 const AppReducer = combineReducers({  //contains all app's reducers
   nav,
   TimelineReducer,
-  SearchReducer
+  SearchReducer,
 });
 
 export default AppReducer;

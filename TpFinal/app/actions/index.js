@@ -1,15 +1,17 @@
 
-//Timeline Actions!
+//Timeline Actions:
 export const GET_TIMELINE = 'GET_TIMELINE';
-//Config Actions!
+//Config Actions:
 export const CONFIG_NOT_VERIFIED = 'CONFIG_NOT_VERIFIED';
 export const CONFIG_DONT_FOLLOW = 'CONFIG_DONT_FOLLOW';
 export const CONFIG_HAVE_DEFAULT_PROFILE = 'CONFIG_HAVE_DEFAULT_PROFILE';
 export const CONFIG_CONTAINS_LINK = 'CONFIG_CONTAINS_LINK';
 export const CONFIG_TEXT_TRUNCATED = 'CONFIG_TEXT_TRUNCATED';
-
-const host = 'http://192.168.1.44:8080';   // 192.168.0.gaston  // 192.168.0.235 santi // 192.168.0.62 cris
+//Trends Actions:
 export const GET_TRENDS = "GET_TRENDS"
+
+const host = 'http://192.168.0.212:8080';   // 192.168.0.212 gaston  // 192.168.0.235 santi // 192.168.0.62 cris
+
 
 export function getTimeline(){
     return (dispatch) => {
@@ -57,6 +59,7 @@ export function configNotVerified(){
       dispatch({type: CONFIG_TEXT_TRUNCATED});
     }
   }
+
 export function getTrends(){
     return (dispatch) => {
         const url = `${host}/trends?id=23424747`; 
